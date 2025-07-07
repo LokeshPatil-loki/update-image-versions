@@ -3,23 +3,20 @@
   "extends": [
     "config:recommended"
   ],
+  {
   "customManagers": [
     {
       "customType": "jsonata",
       "fileFormat": "yaml",
-      "managerFilePatterns": [
-        "workflows/.*\\.yml",
-        "/.*\\.yml",
-        ".*\\.yml"
-      ],
+      "managerFilePatterns": ["update.yml"],
       "matchStrings": [
-        "$.on.workflow_dispatch.inputs.Operator_version.default"
+        "on.workflow_dispatch.inputs.Operator_version.{ \"depName\": \"dynatrace-operator\", \"currentValue\": default, \"depType\": \"github-actions-input\" }",
+        "on.workflow_dispatch.inputs.Operator_version.{ \"depName\": \"dynatrace-operator\", \"currentValue\": default, \"depType\": \"github-actions-input\" }"
       ],
       "datasourceTemplate": "docker",
-      "registryUrlTemplate": "public.ecr.aws",
-      "depNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator",
-      "currentValueTemplate": "{{{ default }}}"
+      "packageNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator",
+      "versioningTemplate": "semver"
     }
-
   ]
+}
 }

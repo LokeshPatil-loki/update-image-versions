@@ -3,10 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "jsonata": {
-    "pinDigests": false,
-    "customManagers": []
-  },
   "customManagers": [
     {
       "customType": "jsonata",
@@ -23,7 +19,19 @@
       "registryUrlTemplate": "public.ecr.aws",
       "depNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator",
       "currentValueTemplate": "{{{ default }}}"
+    },
+    {
+      "customType": "jsonata",
+      "fileFormat": "yaml",
+      "managerFilePatterns": ["update-images.yaml"],
+      "matchStrings": [
+        "$.on.workflow_dispatch.inputs.Operator_version.default"
+      ],
+      "datasourceTemplate": "docker",
+      "registryUrlTemplate": "public.ecr.aws",
+      "depNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator"
     }
+
   ]
 }
 

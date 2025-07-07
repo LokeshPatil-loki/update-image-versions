@@ -12,7 +12,7 @@
         "$each(on.workflow_dispatch.inputs, function($v, $k) {{\"depName\": \"public.ecr.aws/dynatrace/dynatrace-\" & $lowercase($replace($k,\"_version\",\"\")),\"currentValue\": $v.default, \"depType\": \"github-actions-input\"}})"
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "loose"
     }
   ]
 }

@@ -3,6 +3,7 @@
   "extends": [
     "config:recommended"
   ],
+  "logLevel": "debug",
   "customManagers": [
     {
       "customType": "jsonata",
@@ -14,6 +15,7 @@
         "$.on.workflow_dispatch.inputs.Operator_version.default"
       ],
       "datasourceTemplate": "docker",
+      "registryTemplate": "public.ecr.aws",
       "depNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator",
       "currentValueTemplate": "{{{ default }}}"
     }

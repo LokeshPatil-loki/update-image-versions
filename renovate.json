@@ -19,18 +19,6 @@
       "registryUrlTemplate": "public.ecr.aws",
       "depNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator",
       "currentValueTemplate": "{{{ default }}}"
-    },
-    {
-      "customType": "jsonata",
-      "fileFormat": "yaml",
-      "managerFilePatterns": ["update-images.yml"],
-      "matchStrings": [
-        "$.on.workflow_dispatch.inputs.Operator_version.default"
-      ],
-      "currentValueTemplate": "{{{ $.on.workflow_dispatch.inputs.Operator_version.default }}}",
-      "datasourceTemplate": "docker",
-      "registryUrlTemplate": "public.ecr.aws",
-      "depNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator"
     }
 
   ]

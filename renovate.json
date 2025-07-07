@@ -4,7 +4,17 @@
     "config:recommended"
   ],
   "customManagers": [
-    {
+      {
+      "customType": "jsonata",
+      "fileFormat": "yaml",
+      "managerFilePatterns": ["update.yml"],
+      "matchStrings": [
+        "on.workflow_dispatch.inputs.Operator_version{\"currentValue\":default,\"depName\":\"public.ecr.aws/dynatrace/dynatrace-operator\",\"depType\":\"github-actions-input\"}"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "semver"
+    }
+    ,{
       "customType": "jsonata",
       "fileFormat": "yaml",
       "managerFilePatterns": ["update.yml"],

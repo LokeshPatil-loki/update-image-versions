@@ -27,6 +27,7 @@
       "matchStrings": [
         "$.on.workflow_dispatch.inputs.Operator_version.default"
       ],
+      "currentValueTemplate": "{{{ $.on.workflow_dispatch.inputs.Operator_version.default }}}",
       "datasourceTemplate": "docker",
       "registryUrlTemplate": "public.ecr.aws",
       "depNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator"

@@ -2,5 +2,19 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "customManagers": [
+    {
+      "customType": "jsonata",
+      "fileFormat": "yaml",
+      "managerFilePatterns": [
+        ".github/workflows/.*\\.yml"
+      ],
+      "matchStrings": [
+        "$.on.workflow_dispatch.inputs.Operator_version.default"
+      ],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator"
+    }
   ]
 }

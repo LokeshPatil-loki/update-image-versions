@@ -1,0 +1,8 @@
+production:
+  packages:
+    version: 1.2.3
+    package: foo
+test:
+  metadata:
+    - version: 4.5.6
+      package: bar

@@ -3,12 +3,17 @@
   "extends": [
     "config:recommended"
   ],
+  "jsonata": {
+    "pinDigests": false,
+    "customManagers": []
+  },
   "customManagers": [
     {
       "customType": "jsonata",
       "fileFormat": "yaml",
       "managerFilePatterns": [
-        ".github/workflows/.*\\.yml"
+        "workflows/.*\\.yml",
+        "/.*\\.yml"
       ],
       "matchStrings": [
         "$.on.workflow_dispatch.inputs.Operator_version.default"
@@ -20,3 +25,5 @@
     }
   ]
 }
+
+

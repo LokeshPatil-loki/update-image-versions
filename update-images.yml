@@ -1,0 +1,24 @@
+name: "Update images"
+
+on:
+  workflow_dispatch:
+    inputs:
+      Operator_version:
+        type: string
+        required: false
+        default: "1.3.2" # dynatrace-operator
+        description: "Dynatrace Operator version tag"
+      OneAgent_version:
+        type: string
+        required: false
+        default: "1.307.69.20250312-142418" # dynatrace-oneagent
+        description: "Dynatrace OneAgent version tag"
+jobs:
+  display:
+    name: "Display versions"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Display Operator version"
+        run: "echo 'public.ecr.aws/dynatrace/dynatrace-operator:${{ github.event.inputs.Operator_version }}'"
+      - name: "Display OneAgent version"
+        run: "echo 'public.ecr.aws/dynatrace/dynatrace-oneagent:${{ github.event.inputs.OneAgent_version }}'"

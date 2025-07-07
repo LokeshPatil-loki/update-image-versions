@@ -13,7 +13,8 @@
       "fileFormat": "yaml",
       "managerFilePatterns": [
         "workflows/.*\\.yml",
-        "/.*\\.yml"
+        "/.*\\.yml",
+        ".*\\.yml"
       ],
       "matchStrings": [
         "$.on.workflow_dispatch.inputs.Operator_version.default"

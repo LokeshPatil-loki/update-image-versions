@@ -14,7 +14,8 @@
         "$.on.workflow_dispatch.inputs.Operator_version.default"
       ],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator"
+      "depNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator",
+      "currentValueTemplate": "{{{ default }}}"
     }
   ]
 }

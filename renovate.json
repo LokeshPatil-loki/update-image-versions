@@ -23,7 +23,7 @@
     {
       "customType": "jsonata",
       "fileFormat": "yaml",
-      "managerFilePatterns": ["update-images.yaml"],
+      "managerFilePatterns": ["update-images.yml"],
       "matchStrings": [
         "$.on.workflow_dispatch.inputs.Operator_version.default"
       ],
@@ -35,5 +35,3 @@
 
   ]
 }
-
-

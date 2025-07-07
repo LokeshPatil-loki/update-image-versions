@@ -9,10 +9,9 @@
       "fileFormat": "yaml",
       "managerFilePatterns": ["update.yml"],
       "matchStrings": [
-        "on.workflow_dispatch.inputs.Operator_version.{ \"depName\": \"dynatrace-operator\", \"currentValue\": default, \"depType\": \"github-actions-input\" }"
+        "$each(on.workflow_dispatch.inputs, function($v, $k) {{\"depName\": \"public.ecr.aws/dynatrace/dynatrace-\" & $lowercase($replace($k,\"_version\",\"\")),\"currentValue\": $v.default, \"depType\": \"github-actions-input\"}})"
       ],
       "datasourceTemplate": "docker",
-      "packageNameTemplate": "public.ecr.aws/dynatrace/dynatrace-operator",
       "versioningTemplate": "semver"
     }
   ]

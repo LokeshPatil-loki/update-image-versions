@@ -13,6 +13,11 @@ on:
         required: false
         default: "1.307.69.20250312-142418" # dynatrace-oneagent
         description: "Dynatrace OneAgent version tag"
+      Activegate_version:
+        type: string
+        required: false
+        default: "1.307.34.20250219-122519" # dynatrace-activegate
+        description: "Dynatrace OneAgent version tag"
 jobs:
   display:
     name: "Display versions"

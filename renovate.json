@@ -3,6 +3,7 @@
   "extends": [
     "config:recommended"
   ],
+  "enabledManagers":["custom.jsonata"]
   "customManagers": [
       {
       "customType": "jsonata",
